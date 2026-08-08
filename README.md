@@ -40,8 +40,14 @@ The preprocessing script is run once per measurement campaign to produce the reg
 Typical usage of the modeling chain in MATLAB[cite: 13]:
 
 ```matlab
-% Set cfg.fref in Catalina_Project/default_config first
+% 1. Preprocess raw CSV calibration data into 'measurements.xlsx'
+% Required raw files: '70M-1G_1M (1).csv', '1G-3G_1M.csv', '3G-6G_1M.csv'
+dataprocess 
+
+% 2. Set cfg.fref in Catalina_Project/default_config first
 Catalina_Project                 % 1 = SCAN, 2 = BUILD, 3 = VALIDATE
+
+% 3. Generate and verify profiles
 Catalina_MakeProfiles('selftest')
 Catalina_MakeProfiles('model.mat', 'targets.xlsx', 'profiles.xlsx')
 Catalina_InspectProfiles('profiles.xlsx', 40)
