@@ -50,5 +50,4 @@ Catalina_Project                 % 1 = SCAN, 2 = BUILD, 3 = VALIDATE
 % 3. Generate and verify profiles
 Catalina_MakeProfiles('selftest')
 Catalina_MakeProfiles('model.mat', 'targets.xlsx', 'profiles.xlsx')
-Catalina_InspectProfiles('profiles.xlsx', 40)
 Catalina_LoadScript('profiles.xlsx', 'fastlock_load.txt')
